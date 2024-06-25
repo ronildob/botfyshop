@@ -1,0 +1,94 @@
+<!-- home/templates/home/index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA.GL Soluções Digitais</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="icon" href="https://github.com/ronildob/IMAGENS/blob/main/fiveicon%20-%20GL%20.png?raw=true">
+</head>
+<body>
+    <header>
+        <h2 id="main-title"></h2>
+        <div class="apresentacao">
+            <div class="explicacao">
+                <h2>Clique na imagem para ver a loja de apresentação referente ao Nicho.</h2>
+                <h2s>Senha: 1234</h2s>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="cont-principal">
+            <div class="initial1">
+                <div class="initial">
+                    <div class="swiper-container-horizontal">
+                        <div class="swiper-wrapper">
+                            {% for slide in slides %}
+                            <div class="swiper-slide">
+                                <a href="{{ slide.link_url }}" target="_blank"><img src="{{ slide.image_url }}" alt="{{ slide.title }}"></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 GL Soluções Digitais</p>
+        <h5>
+            <a href="https://api.whatsapp.com/send?phone=5513998053097" target="_blank">
+                <img src="{% static 'home/img/whats.png' %}"> (13) 99805-3097
+            </a>
+        </h5>
+        <h4 id="rodape"></h4>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var horizontalSwiper = new Swiper('.swiper-container-horizontal', {
+                direction: 'horizontal',
+                slidesPerView: 1,
+                spaceBetween: 10,
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 2000,
+                    disableOnInteraction: false,
+                },
+                keyboard: {
+                    enabled: true,
+                },
+                mousewheel: {
+                    enabled: true,
+                },
+                effect: 'slide',
+                coverflowEffect: {
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                },
+            });
+
+            var swiperContainer = document.querySelector('.swiper-container-horizontal');
+            swiperContainer.addEventListener('mouseover', function() {
+                horizontalSwiper.autoplay.stop();
+            });
+            swiperContainer.addEventListener('mouseout', function() {
+                horizontalSwiper.autoplay.start();
+            });
+        });
+    </script>
+</body>
+</html>

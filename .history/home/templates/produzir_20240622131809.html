@@ -1,0 +1,1005 @@
+{% load static %}
+{% load i18n %}
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>IA.GL Soluções Digitais</title>    
+      <link rel="icon" href="https://github.com/ronildob/IMAGENS/blob/main/fiveicon%20-%20GL%20.png?raw=true">
+      <link rel="stylesheet" href="{% static 'home/css/spiners.css'%}">   
+<script>
+window.onload = function() {
+    // Manipula o histórico para evitar o botão voltar
+    history.pushState(null, null, location.href);
+    window.onpopstate = function(event) {
+        history.go(1); // Força o navegador a ir para frente
+    };
+};
+</script>
+    
+<style> 
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Define a orientação dos elementos como coluna */
+    justify-content: flex-start; /* Alinha os elementos no início (no topo) verticalmente */
+    align-items: center; /* Alinha os elementos no centro horizontalmente */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+}
+/* Estilos do conteúdo principal */
+main {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    padding: 20px; /* Espaçamento interno */
+    display: flex; /* Display flex para layout flexível */
+    flex-wrap: wrap; /* Permite que os itens sejam envolvidos em várias linhas */
+    justify-content: space-between; /* Distribui uniformemente os itens ao longo do eixo principal */
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+}
+
+/* Estilos do contêiner principal */
+.cont-principal {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 1px; /* Margem inferior para separação */
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    flex-direction: column; /* Empilha os itens verticalmente */
+
+}
+header {
+    background-color: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+    color: #c3bebe; /* Cor do texto no cabeçalho */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    width: 120%; /* Largura total */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    display: flex; /* Torna o contêiner um flex container */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    flex-direction: column; /* Empilha os itens verticalmente */
+
+}
+/* Estilizando o título h3 */
+#main-title {
+    /* Definindo a altura desejada */
+    height: 100px;
+    /* Definindo a largura desejada */
+    width: 250px;
+    /* Aplicando a imagem como fundo */
+    background-image: url('https://github.com/ronildob/IMAGENS/blob/main/Gl%20LOGO%20(300%20x%2090%20px).png?raw=true');
+    /* Centralizando a imagem no elemento */
+    background-position: center;
+    /* Redimensionando a imagem para cobrir todo o espaço do elemento */
+    background-size: cover;
+    /* Estilizando o texto dentro do elemento */
+    color: white;
+    text-align: center;
+    line-height: 90px; /* Para centralizar verticalmente */
+}
+#rodape {
+        /* Definindo a altura desejada */
+        height: 40px;
+    /* Definindo a largura desejada */
+    width: 120px;
+    /* Aplicando a imagem como fundo */
+    background-image: url('https://github.com/ronildob/IMAGENS/blob/main/Shopbotfy%20-%20LOGO%20%20(300%20x%2090%20px).png?raw=true');
+    /* Centralizando a imagem no elemento */
+    background-position: center;
+    /* Redimensionando a imagem para cobrir todo o espaço do elemento */
+    background-size: cover;
+    /* Estilizando o texto dentro do elemento */
+    color: white;
+    text-align: center;
+    line-height: 90px; /* Para centralizar verticalmente */
+}
+.apresentacao {
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 1px; /* Margem inferior para separação */
+    position: relative; /* Define o posicionamento relativo */    
+    background:  #000000;
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    
+}
+
+.explicacao {
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */  
+    margin-bottom: 1px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+    
+}
+
+.videoexplicacao {
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */  
+    margin-bottom: 10px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+    align-items: center; /* Centraliza os itens verticalmente */
+    
+}
+
+    /* video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção de 16:9 para vídeos responsivos */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    }
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cont-botão {
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 20px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+
+    
+}   
+
+button, input[type=submit] {
+padding: 10px; /* Espaçamento interno */
+height: 100%; /* Altura fixa para botões */
+font-size: 19px; /* Tamanho da fonte */
+color: #fff; /* Cor do texto */
+background:#000000;
+display: block; /* Torna o botão um bloco para ocupar toda a largura disponível */
+margin: 0 auto; /* Centraliza horizontalmente */
+justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+align-items: center; /* Centraliza os itens ao longo do eixo secundário (horizontal) */
+border-radius: 20px; /* Borda arredondada de 20px */
+border-width: 2px; /* largura da borda */
+border-style: solid; /* estilo da borda (pode ser solid, dashed, dotted, double, etc.) */
+border-color: #000000; /* cor da borda */
+}
+
+/* Media query para dispositivos móveis */
+@media (min-width: 1440px){
+    .apresentacao {
+        width: 100%; /* Largura total */
+    }
+    .explicacao {
+    width: 80%; /* Define a largura como metade do contêiner principal */
+    }
+    .videoexplicacao{
+    width: 60%; /* Define a largura como 100% em dispositivos menores */
+    }
+    .cont-botão {
+        width: 100%; /* Largura total */
+    }
+    button, input[type=submit] {
+        width: 60%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+    }
+    h1 {
+        font-size: 19px; /* Tamanho da fonte */
+    }
+    h2 {
+        font-size: 19px; /* Tamanho da fonte */
+    }
+    h3 { 
+        font-size: 19px; /* Tamanho da fonte */   
+    }
+    .formulariop4 {
+    width: 100%; /* Ambos ocupam metade da largura */
+    }   
+    .form {
+        width: 100%; /* Ambos ocupam metade da largura */   
+    }
+    
+}   
+@media (min-width: 1024px)and (max-width: 1440px){
+    .apresentacao {
+        width: 100%; /* Largura total */
+    }
+    .explicacao {
+    width: 80%; /* Define a largura como metade do contêiner principal */
+    }
+    .videoexplicacao{
+    width: 60%; /* Define a largura como 100% em dispositivos menores */
+    }
+    .cont-botão {
+        width: 100%; /* Largura total */
+    }
+    button, input[type=submit] {
+        width: 60%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+    }
+    h1 {
+        font-size: 19px; /* Tamanho da fonte */
+    }
+    h2 {
+        font-size: 19px; /* Tamanho da fonte */
+    }
+    h3 { 
+        font-size: 19px; /* Tamanho da fonte */   
+    }
+    .formulariop4 {
+    width: 100%; /* Ambos ocupam metade da largura */
+    }   
+    .form {
+        width: 100%; /* Ambos ocupam metade da largura */   
+    }
+    
+}   
+@media (min-width: 768px) and (max-width: 1024px) {
+.apresentacao {
+    width: 100%; /* Largura total */
+}
+.explicacao {
+width: 80%; /* Define a largura como metade do contêiner principal */
+}
+.videoexplicacao{
+    width: 70%; /* Define a largura como 100% em dispositivos menores */
+}
+.cont-botão {
+    width: 100%; /* Largura total */
+}
+button, input[type=submit] {
+    width: 80%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+}
+h1 {
+    font-size: 19px; /* Tamanho da fonte */
+}
+h2 {
+    font-size: 19px; /* Tamanho da fonte */
+}
+h3 { 
+    font-size: 19px; /* Tamanho da fonte */   
+}
+.formulariop4 {
+width: 100%; /* Ambos ocupam metade da largura */
+}   
+.form {
+    width: 80%; /* Ambos ocupam metade da largura */   
+} 
+
+}
+@media (min-width: 300px) and (max-width: 767px){
+.apresentacao {
+    width: 100%; /* Largura total */
+}
+.explicacao {
+width: 100%; /* Define a largura como metade do contêiner principal */
+}
+.videoexplicacao{
+    width: 100%; /* Define a largura como 100% em dispositivos menores */
+}
+.cont-botão {
+    width: 100%; /* Largura total */
+}
+button, input[type=submit] {
+    width: 90%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */   
+}      
+h1 {
+    font-size: 19px; /* Tamanho da fonte */
+}
+h2 {
+    font-size: 19px; /* Tamanho da fonte */
+}
+h3 { 
+    font-size: 19px; /* Tamanho da fonte */   
+}
+.formulariop4 {
+width: 100%; /* Ambos ocupam metade da largura */
+}   
+.form {
+    width: 100%; /* Ambos ocupam metade da largura */   
+} 
+footer {
+    flex-direction: column; /* Empilha os itens verticalmente */
+    text-align: center; /* Alinha o texto centralmente */
+}
+
+footer h4,
+footer h5,
+footer p {
+    margin-bottom: 10px; /* Espaçamento entre os itens empilhados */
+}
+
+}
+
+
+/* FONTES */  
+h1 {
+    text-align: center; /* Centraliza horizontalmente */
+    margin-top: 0; /* Remove margem superior padrão */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    color: #fff; /* Cor do texto */
+    font-size: 23px; /* Tamanho da fonte */
+    align-self: flex-start; /* Alinha o elemento ao início (topo) verticalmente */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder; /* Adiciona negrito */
+}
+h2 {
+    text-align: center; /* Centraliza horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do texto no cabeçalho */
+    font-size: 23px; /* Tamanho da fonte */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter; /* Adiciona negrito */
+
+}
+h3 {
+    text-align: center; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espaço superior para centralização vertical */
+    margin-bottom: 50px; /* Espaço inferior para centralização vertical */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do texto no cabeçalho */
+    font-size: 23px; /* Tamanho da fonte */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
+}
+h4 {
+    text-align: center; /* Centraliza horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do texto no cabeçalho */
+    font-size: 16px; /* Tamanho da fonte */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
+}
+h5 {
+    text-align: center; /* Centraliza horizontalmente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do texto no cabeçalho */
+    font-size: 16px; /* Tamanho da fonte */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+
+}
+footer {
+    display: flex;
+    justify-content: space-between; /* Distribui os itens igualmente na linha */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 70%;
+    
+}
+
+footer p{
+    font-size: 18px; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto no cabeçalho */
+}
+footer p,
+footer h4,
+footer h5 {
+    margin: 20; /* Remover margens padrão para evitar espaçamento extra */
+}
+footer h5 a {
+    display: flex; /* Usar flexbox para alinhar os itens */
+    align-items: center; /* Alinhar os itens verticalmente ao centro */
+    color: #fff; /* Cor do texto do link */
+    text-decoration: none; /* Remover sublinhado padrão */
+    transition: color 0.3s ease; /* Transição suave da cor ao passar o mouse */
+}
+
+footer h5 a img {
+    width: 60px; /* Ajustar a largura do ícone do WhatsApp */
+    margin-right: 0; /* Espaçamento à direita do ícone */
+}
+
+footer h5 a:hover {
+    color: #48ff00; /* Cor do texto do link ao passar o mouse */
+}
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+/* ESTILOS FORMULÁRIO */
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+.formulariop4 {
+margin-top: 0; /* Remove a margem superior */
+margin-left: auto; /* Alinha à direita do container esquerdo */
+margin-right: auto; /* Centraliza horizontalmente */
+display: flex; /* Torna o contêiner um flex container */
+flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+justify-content: center; /* Centraliza os itens horizontalmente */
+align-items: center; /* Centraliza os itens verticalmente */
+
+}   
+.form {
+    margin-top: 0; /* Remove a margem superior */
+    margin-bottom: 0; /* Margem inferior de 20px */
+    margin-left: auto; /* Alinha à direita do container esquerdo */
+    margin-right: auto; /* Centraliza horizontalmente */
+    flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    padding: 20px; /* Espaçamento interno */
+
+}   
+
+/* Estilos para os campos de entrada e seleção */
+
+
+.form__field,
+.form__field--select {
+width: 100%;
+max-width: 100%; /* Definir uma largura máxima para o campo */
+height: 40px;
+border-radius: 20px;
+padding: 5px;
+font-size: 16px;
+background-color: #f9f9f9;
+transition: background-color 0.3s ease;
+margin-bottom: 20px; /* Adiciona espaçamento inferior entre os campos */
+box-sizing: border-box;
+
+}
+/* Estilos quando o mouse está sobre os campos de entrada e seleção */
+.form__field:hover,
+.form__field--select:hover {
+background-color: #5c5959;
+}
+/* Estilos quando os campos de entrada e seleção estão focados */
+.form__field:focus,
+.form__field--select:focus {
+outline: none;
+background-color: #f7b3b3;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+/* Estilo para as opções do campo de seleção */
+.form__field--select option {
+font-size: 14px;
+color: #333;
+}
+/* Estilo para as opções do campo de seleção quando o mouse está sobre elas */
+.form__field--select option:hover {
+color: #44c457;
+font-size: 14px;
+}
+
+</style>    
+  </head>
+      <body>
+          <header>
+            <h2 id="main-title"></h2>
+            <div class="apresentacao">
+                <div class="explicacao"> 
+                    <h1>This is the final step. Fill out the form with the correct information; these details will be used in your store.</h1>
+                    <h2>This is the final step. Fill out the form with the correct information; these details will be used in your store.</h2>
+                </div>
+            </div>
+  
+          
+          </header>
+  
+      <main>
+           <div class="cont-principal">                         
+                <!-- Container do formulário -->
+                <div class="formulariop4"> 
+                <div class="custom-input custom-input--compact">
+                    <form method="POST" action="{% url 'produzir' %}" id="{{ custom_input_id }}" class="form custom-input__form">
+                        {% csrf_token %}                   
+                            
+                            {% if form.posted_successfully %}
+                            <p class="alert alert--success">{% trans 'custom_input.success' %}</p>
+                            {% endif %}
+                            
+                            {% if form.errors %}
+                            <p class="alert alert--error">{{ form.errors.response }}</p>
+                            {% endif %}                      
+                                                       
+                                       
+                            <!-- Campo de Email de Suporte -->
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <input type="text" id="custom_input_id[email_suporte]" name="email_suporte" class="form__field form__field--text form__field--large" required placeholder="Enter the email address that will support your store here"autocomplete="on">
+                                </div> 
+                            </div>   
+                            <!-- Campo de Empresa -->
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <input type="text" id="custom_input[empresa]" name="empresa" class="form__field form__field--text form__field--large" required placeholder="Tell us the name of your store">
+                                </div>
+                            </div>    
+                            <!-- Campo de Telefone -->
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <input type="text" id="custom_input[telefone]" name="telefone" class="form__field form__field--text form__field--large" required placeholder="Enter your phone number (numbers only)">
+                                </div>
+                            </div> 
+                            <!-- Campo de CEP -->
+                          <!--   <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <input type="text" id="custom_input[cep]" name="cep" class="form__field form__field--text form__field--large" required placeholder="Digite seu CEP (apenas números)">
+                                </div>
+                            </div> 
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <input type="text" id="custom_input[rua]" name="rua" class="form__field form__field--text form__field--large" required placeholder="Escreva aqui o nome da sua Rua">  
+                                </div>
+                            </div>
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <input type="text" id="custom_input[bairro]" name="bairro" class="form__field form__field--text form__field--large" required placeholder="Escreva aqui o nome do seu bairro">
+                                </div> 
+                            </div>   
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <input type="text" id="custom_input[cidade]" name="cidade" class="form__field form__field--text form__field--large" required placeholder="Escreva aqui o nome da sua Cidade">
+                                </div>
+                            </div> 
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <select id="estado" name="estado" class="form__field form__field--select form__field--large" required>
+                                        <option value="">Selecione o Estado</option>
+                                        <option value="AC">Acre</option>
+                                        <option value="AL">Alagoas</option>
+                                        <option value="AP">Amapá</option>
+                                        <option value="AM">Amazonas</option>
+                                        <option value="BA">Bahia</option>
+                                        <option value="CE">Ceará</option>
+                                        <option value="DF">Distrito Federal</option>
+                                        <option value="ES">Espírito Santo</option>
+                                        <option value="GO">Goiás</option>
+                                        <option value="MA">Maranhão</option>
+                                        <option value="MT">Mato Grosso</option>
+                                        <option value="MS">Mato Grosso do Sul</option>
+                                        <option value="MG">Minas Gerais</option>
+                                        <option value="PA">Pará</option>
+                                        <option value="PB">Paraíba</option>
+                                        <option value="PR">Paraná</option>
+                                        <option value="PE">Pernambuco</option>
+                                        <option value="PI">Piauí</option>
+                                        <option value="RJ">Rio de Janeiro</option>
+                                        <option value="RN">Rio Grande do Norte</option>
+                                        <option value="RS">Rio Grande do Sul</option>
+                                        <option value="RO">Rondônia</option>
+                                        <option value="RR">Roraima</option>
+                                        <option value="SC">Santa Catarina</option>
+                                        <option value="SP">São Paulo</option>
+                                        <option value="SE">Sergipe</option>
+                                        <option value="TO">Tocantins</option>
+                                    </select>
+                                </div>
+                            </div> -->
+                            
+                            <!-- horario de atendimento -->
+                            <div class="form__input-row">
+                                <div class="form__input-wrapper form__input-wrapper--labelled">
+                                    <select id="business_hours" name="business_hours" class="form__field form__field--select form__field--large" required>
+                                    <option value="">Select the Support Hours</option>
+                                    <option value="hora1">Monday to Friday from 9:00 AM to 6:00 PM</option>
+                                    <option value="hora2">Monday to Friday from 9:00 AM to 10:00 PM</option>
+                                    <option value="hora3">Monday to Saturday from 9:00 AM to 6:00 PM</option>
+                                    <option value="hora4">Monday to Saturday from 9:00 AM to 10:00 PM</option>
+                                    <option value="hora5">Monday to Friday from 9:00 AM to 6:00 PM - Saturday from 9:00 AM to 12:00 PM</option>
+                                    <option value="hora6">Monday to Friday from 9:00 AM to 10:00 PM - Saturday from 9:00 AM to 12:00 PM</option>
+                                    <option value="hora7">Every day from 9:00 AM to 6:00 PM</option>
+                                    <option value="hora8">Every day from 9:00 AM to 10:00 PM</option>                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="cont-botão"> 
+                                <!-- Botão Enviar -->                      
+                                <button type="submit" class="form__submit button button--primary button--verificar" onclick="produzir()">Start</button>                    
+                            </div>  
+                    </form>
+                    
+                </div> 
+            </div>
+            </div> 
+            <div id="spinner-overlay" class="spinner-overlay">   
+              <svg class="sp" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                      <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#000" />
+                          <stop offset="40%" stop-color="#fff" />
+                          <stop offset="100%" stop-color="#fff" />
+                      </linearGradient>
+                      <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="#000" />
+                          <stop offset="60%" stop-color="#000" />
+                          <stop offset="100%" stop-color="#fff" />
+                      </linearGradient>
+                      <mask id="mask1">
+                          <rect x="0" y="0" width="128" height="128" fill="url(#grad1)" />
+                      </mask>
+                      <mask id="mask2">
+                          <rect x="0" y="0" width="128" height="128" fill="url(#grad2)" />
+                      </mask>
+                  </defs>
+                  <g fill="none" stroke-linecap="round" stroke-width="16">
+                      <circle class="sp__ring" r="56" cx="64" cy="64" stroke="#ddd" />
+                      <g stroke="hsl(223,90%,50%)">
+                          <path class="sp__worm1" d="M120,64c0,30.928-25.072,56-56,56S8,94.928,8,64" stroke="hsl(343,90%,50%)" stroke-dasharray="43.98 307.87" />
+                          <g transform="translate(42,42)">
+                              <g class="sp__worm2" transform="translate(-42,0)">
+                                  <path class="sp__worm2-1" d="M8,22c0-7.732,6.268-14,14-14s14,6.268,14,14" stroke-dasharray="43.98 175.92" />
+                              </g>
+                          </g>
+                      </g>
+                      <g stroke="hsl(283,90%,50%)" mask="url(#mask1)">
+                          <path class="sp__worm1" d="M120,64c0,30.928-25.072,56-56,56S8,94.928,8,64" stroke-dasharray="43.98 307.87" />
+                          <g transform="translate(42,42)">
+                              <g class="sp__worm2" transform="translate(-42,0)">
+                                  <path class="sp__worm2-1" d="M8,22c0-7.732,6.268-14,14-14s14,6.268,14,14" stroke-dasharray="43.98 175.92" />
+                              </g>
+                          </g>
+                      </g>
+                      <g stroke="hsl(343,90%,50%)" mask="url(#mask2)">
+                          <path class="sp__worm1" d="M120,64c0,30.928-25.072,56-56,56S8,94.928,8,64" stroke-dasharray="43.98 307.87" />
+                          <g transform="translate(42,42)">
+                              <g class="sp__worm2" transform="translate(-42,0)">
+                                  <path class="sp__worm2-1" d="M8,22c0-7.732,6.268-14,14-14s14,6.268,14,14" stroke-dasharray="43.98 175.92" />
+                              </g>
+                          </g>
+                      </g>
+                  </g>
+              </svg>
+            </div> 
+      </main>
+  
+      <footer>
+        <p>&copy; 2024 GL Soluções Digitais</p>
+        <h5>
+            <a href="https://api.whatsapp.com/send?phone=5513998053097" target="_blank">
+                <img src="{% static 'home/img/whats.png' %}">+55 (13) 99805-3097
+            </a>
+        </h5>
+        
+        <h4 id="rodape"></h4>
+        
+    </footer>
+
+  <!-- scrip cep -->
+  <script>
+      // Função para buscar endereço por CEP
+  async function buscarEnderecoPorCEP(cep) {
+      const url = `https://viacep.com.br/ws/${cep}/json/`;
+      try {
+          const response = await fetch(url);
+          const data = await response.json();
+          if (data.erro) {
+              alert('CEP não encontrado. Por favor, verifique e tente novamente.');
+              limparCamposEndereco();
+          } else {
+              preencherCamposEndereco(data);
+          }
+      } catch (error) {
+          console.error('Erro ao buscar endereço:', error);
+      }
+  }
+  
+  // Função para preencher os campos de endereço com os dados obtidos do CEP
+  function preencherCamposEndereco(data) {
+      document.getElementById('custom_input[rua]').value = data.logradouro || '';
+      document.getElementById('custom_input[bairro]').value = data.bairro || '';
+      document.getElementById('custom_input[cidade]').value = data.localidade || '';
+      document.getElementById('estado').value = data.uf || '';
+  }
+  
+  // Função para limpar os campos de endereço
+  function limparCamposEndereco() {
+      document.getElementById('custom_input[rua]').value = '';
+      document.getElementById('custom_input[bairro]').value = '';
+      document.getElementById('custom_input[cidade]').value = '';
+      document.getElementById('estado').value = '';
+  }
+  
+  // Evento para acionar a busca do endereço ao inserir o CEP
+  document.getElementById('custom_input[cep]').addEventListener('change', (event) => {
+      const cep = event.target.value.replace(/\D/g, '');
+      if (cep.length === 8) {
+          buscarEnderecoPorCEP(cep);
+      } else {
+          alert('Formato de CEP inválido. O CEP deve conter 8 dígitos.');
+          limparCamposEndereco();
+      }
+  });
+  </script>
+  
+  <!-- SPINER -->
+  <script>
+      function mostrarSpinner() {
+          document.getElementById('spinner-overlay').style.display = 'flex';
+      }
+      
+      function ocultarSpinner() {
+          document.getElementById('spinner-overlay').style.display = 'none';
+      }
+  </script>
+<!-- python -->
+<script>
+    function mostrarSpinner() {
+        document.getElementById('spinner-overlay').style.display = 'flex';
+    }
+    
+    function ocultarSpinner() {
+        document.getElementById('spinner-overlay').style.display = 'none';
+    }
+
+    function validarCampos() {
+        // Coletar os valores dos campos do formulário
+        var email_suporte = document.getElementsByName('email_suporte')[0].value;
+        var empresa = document.getElementsByName('empresa')[0].value;
+        var telefone = document.getElementsByName('telefone')[0].value;
+        var business_hours = document.getElementsByName('business_hours')[0].value;
+        //var rua = document.getElementsByName('rua')[0].value;
+        //var bairro = document.getElementsByName('bairro')[0].value;
+        //var cidade = document.getElementsByName('cidade')[0].value;
+        //var estado = document.getElementsByName('estado')[0].value;
+        //var cep = document.getElementsByName('cep')[0].value;
+        
+
+        // Verificar se todos os campos obrigatórios estão preenchidos
+        if (email_suporte && empresa && telefone && business_hours) {
+            return true; // Todos os campos obrigatórios estão preenchidos
+        } else {
+            return false; // Um ou mais campos obrigatórios estão vazios
+        }
+    }
+
+    function produzir() {
+        // Validar se todos os campos obrigatórios estão preenchidos antes de continuar
+        if (!validarCampos()) {
+            // Exibir mensagem de erro ou fazer outra ação, se necessário
+            console.error('Por favor, preencha todos os campos obrigatórios.');
+            return; // Interrompe o processo se os campos obrigatórios não estiverem preenchidos
+        }
+
+        // Se todos os campos obrigatórios estiverem preenchidos, mostrar o spinner e enviar os dados
+        mostrarSpinner();
+
+        // Construir o objeto de dados para enviar ao programa Python
+        var dados = {        
+            emailsuporte: email_suporte,
+            empresa: empresa,
+            telefone: telefone,
+            atendimento: business_hours
+            //rua: rua,
+            //bairro: bairro,
+            //cidade: cidade,
+            //estado: estado,
+            //cep: cep,
+            
+        };
+
+        // Enviar os dados para o backend
+        fetch("{% url 'produzir' %}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify(dados)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Nova executado com sucesso.');
+                // Exibir mensagem de sucesso para o usuário
+                document.getElementById("confirmationMessage").style.display = "block";
+            } else {
+                console.error('Erro ao executar produzir:', response.statusText);
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao executar produzir:', error);
+        })
+        .finally(() => {
+            // Ocultar spinner após o envio bem-sucedido ou falha
+            ocultarSpinner();
+            // Redirecionar para a página 6 após finalizar o processamento
+            window.location.href = "{% url 'lojapronta' %}";
+        });
+    }
+</script>
+
+
+<!-- Primeira Maiscula -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecionar o elemento de entrada pelo ID usando o seletor de atributo
+        let inputNome = document.querySelector('input[id="custom_input[nome]"]');
+
+        // Verificar se o elemento foi encontrado
+        if (inputNome) {
+            // Adicionar um ouvinte de evento para o evento 'input'
+            inputNome.addEventListener('input', function() {
+                // Obter o valor do campo de entrada
+                let nomeInput = this.value;
+
+                // Chamar a função para formatar o nome
+                let nomeFormatado = formatarNome(nomeInput);
+
+                // Atualizar o valor do campo de entrada com o nome formatado
+                this.value = nomeFormatado;
+            });
+        }
+
+        function formatarNome(nome) {
+            // Dividir o nome em palavras usando espaço como delimitador
+            let palavras = nome.split(' ');
+
+            // Formatar cada palavra (primeira letra maiúscula, restante minúscula)
+            let nomeFormatado = palavras.map(function(palavra) {
+                if (palavra.trim() !== '') { // Verifica se a palavra não está vazia
+                    return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+                }
+                return ''; // Retorna uma string vazia para espaços adicionais
+            });
+
+            // Juntar as palavras formatadas de volta em um único nome, mantendo os espaços originais
+            return nomeFormatado.join(' ');
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Função para adicionar eventos de formatação
+        function adicionarEventoFormatacao(idCampo) {
+            let campo = document.querySelector(`input[id="${idCampo}"]`);
+            if (campo) {
+                campo.addEventListener('input', function() {
+                    let valorInput = this.value;
+                    let valorFormatado = formatarTexto(valorInput);
+                    this.value = valorFormatado;
+                });
+            }
+        }
+
+        // Função para formatar o texto (primeira letra maiúscula, restante minúscula)
+        function formatarTexto(texto) {
+            let palavras = texto.split(' ');
+            let textoFormatado = palavras.map(function(palavra) {
+                if (palavra.trim() !== '') {
+                    return palavra.charAt(0).toUpperCase() + palavra.slice(1).toLowerCase();
+                }
+                return '';
+            });
+            return textoFormatado.join(' ');
+        }
+
+        // Adicionar eventos de formatação para os campos de rua e bairro
+        adicionarEventoFormatacao('custom_input[rua]');
+        adicionarEventoFormatacao('custom_input[bairro]');
+    });
+</script>
+
+<!--Minusculas-->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecionar o elemento de entrada pelo ID usando o seletor de atributo
+        let inputEmail = document.querySelector('input[id="custom_input_id[email_suporte]"]');
+
+        // Verificar se o elemento foi encontrado
+        if (inputEmail) {
+            // Adicionar um ouvinte de evento para o evento 'input'
+            inputEmail.addEventListener('input', function() {
+                // Obter o valor do campo de entrada
+                let emailInput = this.value;
+
+                // Transformar todas as letras em minúsculas
+                let emailFormatado = emailInput.toLowerCase();
+
+                // Atualizar o valor do campo de entrada com o e-mail formatado
+                this.value = emailFormatado;
+            });
+        }
+    });
+</script>
+<!-- Telefone -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecionar o elemento de entrada pelo ID usando o seletor de atributo
+        let inputTelefone = document.querySelector('input[id="custom_input[telefone]"]');
+
+        // Verificar se o elemento foi encontrado
+        if (inputTelefone) {
+            // Adicionar um ouvinte de evento para o evento 'input'
+            inputTelefone.addEventListener('input', function(event) {
+                // Obter o valor atual do campo de entrada
+                let telefoneInput = event.target.value;
+
+                // Remover todos os caracteres não numéricos (deixando apenas os números)
+                let telefoneNumerico = telefoneInput.replace(/\D/g, '');
+
+                // Atualizar o valor do campo de entrada com o número formatado apenas se houver alterações
+                if (telefoneInput !== telefoneNumerico) {
+                    event.target.value = telefoneNumerico;
+                }
+
+                // Verificar se o número de telefone possui 10 ou 11 dígitos
+                if (telefoneNumerico.length > 11) {
+                    // Limitar o número de dígitos para no máximo 11 (para telefones com DDD e código de país)
+                    event.target.value = telefoneNumerico.slice(0, 11);
+                }
+            });
+        }
+    });
+</script>
+<!-- E-mail validar -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Selecionar o elemento de entrada pelo ID usando o seletor de atributo
+        let inputEmail = document.querySelector('input[id="custom_input_id[email_suporte]"]');
+
+        // Verificar se o elemento foi encontrado
+        if (inputEmail) {
+            // Adicionar um ouvinte de evento para o evento 'input'
+            inputEmail.addEventListener('input', function(event) {
+                // Obter o valor atual do campo de entrada
+                let emailInput = event.target.value;
+
+                // Expressão regular para validar o formato do e-mail
+                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                // Verificar se o valor inserido corresponde ao padrão de e-mail
+                if (emailPattern.test(emailInput)) {
+                    // Se for um e-mail válido, remover a marcação de erro (se houver)
+                    inputEmail.setCustomValidity('');
+                } else {
+                    // Se não for um e-mail válido, definir uma mensagem de erro personalizada
+                    inputEmail.setCustomValidity('Por favor, insira um endereço de e-mail válido.');
+                }
+            });
+
+            // Adicionar um ouvinte de evento para redefinir a validação quando o campo é corrigido
+            inputEmail.addEventListener('change', function(event) {
+                event.target.reportValidity(); // Força a exibição da mensagem de erro personalizada, se houver
+            });
+        }
+    });
+</script>
+
+
+
+
+
+
+  
+  
+  
+  
+      </body>
+  </html>
+     

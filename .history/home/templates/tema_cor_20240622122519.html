@@ -1,0 +1,902 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA.GL Soluções Digitais</title> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">     
+    <link rel="icon" href="https://github.com/ronildob/IMAGENS/blob/main/fiveicon%20-%20GL%20.png?raw=true">
+    <link rel="stylesheet" href="{% static 'home/css/spiners.css'%}">   
+
+    <style> 
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column; /* Define a orientação dos elementos como coluna */
+            justify-content: flex-start; /* Alinha os elementos no início (no topo) verticalmente */
+            align-items: center; /* Alinha os elementos no centro horizontalmente */
+            min-height: 100vh; /* Altura mínima igual à altura da viewport */
+            background:  #fff;  
+        }
+        /* Estilos do conteúdo principal */
+        main {
+            width: 100%; /* Largura total */
+            max-width: 100%; /* Largura máxima igual à largura da tela */
+            padding: 20px; /* Espaçamento interno */
+            display: flex; /* Display flex para layout flexível */
+            flex-wrap: wrap; /* Permite que os itens sejam envolvidos em várias linhas */
+            justify-content: space-between; /* Distribui uniformemente os itens ao longo do eixo principal */
+            background:  #fff;  
+        }
+        
+        /* Estilos do contêiner principal */
+        .cont-principal {
+            width: 100%; /* Largura total */
+            max-width: 100%; /* Largura máxima igual à largura da tela */
+            height: auto; /* Altura automática para se ajustar ao conteúdo */
+            background: #fff; /* Cor de fundo branca */
+            padding: 20px; /* Espaçamento interno */
+            box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+            display: flex; /* Torna o contêiner um flex container */
+            justify-content: center; /* Alinha os itens horizontalmente ao centro */
+            align-items: center; /* Alinha os itens verticalmente ao centro */
+            flex-direction: column; /* Empilha os itens verticalmente */
+        }
+         
+        .paleta {
+            height: auto; /* Altura automática para se ajustar ao conteúdo */  
+            position: relative; /* Define o posicionamento relativo */
+            overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+            background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+            padding: 20px; /* Espaçamento interno */
+            box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+            box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+            align-items: center; /* Centraliza os itens verticalmente */
+            text-align: center; /* Centraliza horizontalmente */
+            flex-direction: column; /* Empilha os itens verticalmente */
+            display: flex; /* Torna o contêiner um flex container */
+
+            
+        }
+        .paleta img {
+            max-width: 100%; /* Garantir que a imagem não ultrapasse a largura da div */
+            max-height: 100%; /* Garantir que a imagem não ultrapasse a altura da div */
+            display: block; /* Permitir margens e alinhamento corretos */
+            border-radius: 5px; /* Borda arredondada na imagem */
+        }
+
+        header {
+            background:  #fff;
+            color: #000000; /* Cor do texto no cabeçalho */
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Alinhamento do texto */
+            width: 100%; /* Largura total */
+            height: auto; /* Altura automática para se ajustar ao conteúdo */
+            display: flex; /* Torna o contêiner um flex container */
+            justify-content: center; /* Alinha os itens horizontalmente ao centro */
+            align-items: center; /* Alinha os itens verticalmente ao centro */
+            flex-direction: column; /* Empilha os itens verticalmente */
+
+        }
+        .hea {
+            background:  #000;
+            color: #fff; /* Cor do texto no cabeçalho */
+            padding: 10px; /* Espaçamento interno */
+            text-align: center; /* Alinhamento do texto */
+            width: 100%; /* Largura total */
+            height: auto; /* Altura automática para se ajustar ao conteúdo */
+            display: flex; /* Torna o contêiner um flex container */
+            justify-content: center; /* Alinha os itens horizontalmente ao centro */
+            align-items: center; /* Alinha os itens verticalmente ao centro */
+            flex-direction: column; /* Empilha os itens verticalmente */
+
+        }
+        /* Estilizando o título h3 */
+        #main-title {
+            /* Definindo a altura desejada */
+            height: 100px;
+            /* Definindo a largura desejada */
+            width: 250px;
+            /* Aplicando a imagem como fundo */
+            background-image: url('https://github.com/ronildob/IMAGENS/blob/main/Gl%20LOGO%20(300%20x%2090%20px).png?raw=true');
+            /* Centralizando a imagem no elemento */
+            background-position: center;
+            /* Redimensionando a imagem para cobrir todo o espaço do elemento */
+            background-size: cover;
+            /* Estilizando o texto dentro do elemento */
+            color: 000000;
+            text-align: center;
+            line-height: 90px; /* Para centralizar verticalmente */
+        }
+        #rodape {
+             /* Definindo a altura desejada */
+             height: 40px;
+            /* Definindo a largura desejada */
+            width: 120px;
+            /* Aplicando a imagem como fundo */
+            background-image: url('https://github.com/ronildob/IMAGENS/blob/main/Shopbotfy%20-%20LOGO%20%20(300%20x%2090%20px).png?raw=true');
+            /* Centralizando a imagem no elemento */
+            background-position: center;
+            /* Redimensionando a imagem para cobrir todo o espaço do elemento */
+            background-size: cover;
+            /* Estilizando o texto dentro do elemento */
+            color: white;
+            text-align: center;
+            line-height: 90px; /* Para centralizar verticalmente */
+        }
+        .apresentacao {
+            width: 100%; /* Largura total */
+            max-width: 100%; /* Largura máxima igual à largura da tela */
+            height: auto; /* Altura automática para se ajustar ao conteúdo */
+            position: relative; /* Define o posicionamento relativo */    
+            background:  #fff;
+            padding: 20px; /* Espaçamento interno */
+            box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+            display: flex; /* Torna o contêiner um flex container */
+            flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            align-items: center; /* Centraliza os itens verticalmente */
+            
+        }
+ 
+        .explicacao {
+            width: 80%; /* Define a largura como metade do contêiner principal */
+            max-width: 100%; /* Largura máxima igual à largura da tela */
+            height: auto; /* Altura automática para se ajustar ao conteúdo */  
+            position: relative; /* Define o posicionamento relativo */
+            overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+            background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+            padding: 20px; /* Espaçamento interno */
+            box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+            box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+            
+        }
+       
+
+        
+        .cont-botão {
+            height: auto; /* Altura automática para se ajustar ao conteúdo */
+            margin-bottom: 20px; /* Margem inferior de 20px */
+            position: relative; /* Define o posicionamento relativo */
+            overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+            background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+            padding: 10px; /* Espaçamento interno */
+            box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+            display: flex; /* Torna o contêiner um flex container */
+            flex-direction: column; /* Empilha os itens verticalmente */
+            justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+
+           
+        }   
+       
+        button, input[type=submit] {
+        padding: 10px; /* Espaçamento interno */
+        height: 100%; /* Altura fixa para botões */
+        font-size: 19px; /* Tamanho da fonte */
+        color: #fff; /* Cor do texto */
+        background:#000000;
+        display: block; /* Torna o botão um bloco para ocupar toda a largura disponível */
+        margin: 0 auto; /* Centraliza horizontalmente */
+        justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+        align-items: center; /* Centraliza os itens ao longo do eixo secundário (horizontal) */
+        border-radius: 20px; /* Borda arredondada de 20px */
+        border-width: 2px; /* largura da borda */
+        border-style: solid; /* estilo da borda (pode ser solid, dashed, dotted, double, etc.) */
+        border-color: #000000; /* cor da borda */
+        }
+        .initial {
+            max-width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .initial1 {
+            max-width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            display: flex; /* Torna o contêiner um flex container */
+            flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            align-items: center; /* Centraliza os itens verticalmente */
+        }
+        .swiper-container-horizontal {
+    width: 100%;
+    height: 100%;/* Altura de 100% em relação ao contêiner pai */
+    border-radius: 20px;
+    }
+
+    /* Estilos para os slides dentro do carrossel */
+    .swiper-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .swiper-wrapper{
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */  
+    }
+    /* Media query para dispositivos móveis */
+    @media (min-width: 1440px){
+            .paleta{
+            width: 100%; /* Define a largura como 100% em dispositivos menores */
+            }
+            .cont-botão {
+                width: 100%; /* Largura total */
+            }
+            button, input[type=submit] {
+                width: 60%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+            }
+            h1 {
+                font-size: 19px; /* Tamanho da fonte */
+            }
+            h2 {
+                font-size: 19px; /* Tamanho da fonte */
+            }
+            h3 { 
+                font-size: 19px; /* Tamanho da fonte */   
+            }
+            .formulariop4 {
+            width: 100%; /* Ambos ocupam metade da largura */
+            }   
+            .form {
+                width: 40%; /* Ambos ocupam metade da largura */   
+            }
+            .form__input-row {
+                width: 100%;    
+            } 
+            .initial {
+        width: 80%;
+    }
+    .initial1 {
+        width: 100%;
+    }
+    
+    
+    /* Estilos para os slides dentro do carrossel */
+    .swiper-slide img {
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+    }
+    .swiper-wrapper{
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */  
+    }
+            
+        }   
+    @media (min-width: 1024px)and (max-width: 1440px){
+            .paleta{
+            width: 100%; /* Define a largura como 100% em dispositivos menores */
+            }
+            .cont-botão {
+                width: 100%; /* Largura total */
+            }
+            button, input[type=submit] {
+                width: 60%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+            }
+            h1 {
+                font-size: 19px; /* Tamanho da fonte */
+            }
+            h2 {
+                font-size: 19px; /* Tamanho da fonte */
+            }
+            h3 { 
+                font-size: 19px; /* Tamanho da fonte */   
+            }
+            .formulariop4 {
+            width: 100%; /* Ambos ocupam metade da largura */
+            }   
+            .form {
+                width: 40%; /* Ambos ocupam metade da largura */   
+            }
+            .form__input-row {
+                width: 100%;    
+            } 
+            .initial {
+        width: 80%;
+    }
+    .initial1 {
+        width: 100%;
+    }
+    
+    
+    /* Estilos para os slides dentro do carrossel */
+    .swiper-slide img {
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+    }
+    .swiper-wrapper{
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */  
+    }
+            
+        }   
+    @media (min-width: 768px) and (max-width: 1024px) {
+        .paleta{
+            width: 100%; /* Define a largura como 100% em dispositivos menores */
+        }
+        .cont-botão {
+            width: 100%; /* Largura total */
+        }
+        button, input[type=submit] {
+            width: 80%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+        }
+        h1 {
+            font-size: 19px; /* Tamanho da fonte */
+        }
+        h2 {
+            font-size: 19px; /* Tamanho da fonte */
+        }
+        h3 { 
+            font-size: 19px; /* Tamanho da fonte */   
+        }
+        .formulariop4 {
+        width: 100%; /* Ambos ocupam metade da largura */
+        }   
+        .form {
+            width: 50%; /* Ambos ocupam metade da largura */   
+        } 
+        .form__input-row {
+                width: 100%;    
+            }
+            .initial {
+        width: 80%;
+    }
+    .initial1 {
+        width: 100%;
+    }
+    
+    
+    /* Estilos para os slides dentro do carrossel */
+    .swiper-slide img {
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+    }
+    .swiper-wrapper{
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */  
+    } 
+        }
+    @media (min-width: 300px) and (max-width: 767px){
+        .paleta{
+            width: 100%; /* Define a largura como 100% em dispositivos menores */
+        }
+        .cont-botão {
+            width: 100%; /* Largura total */
+        }
+        button, input[type=submit] {
+            width: 90%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */   
+        }      
+        h1 {
+            font-size: 19px; /* Tamanho da fonte */
+        }
+        h2 {
+            font-size: 19px; /* Tamanho da fonte */
+        }
+        h3 { 
+            font-size: 19px; /* Tamanho da fonte */   
+        }
+        .formulariop4 {
+        width: 100%; /* Ambos ocupam metade da largura */
+        }   
+        .form {
+            width: 80%; /* Ambos ocupam metade da largura */   
+        } 
+        .form__input-row {
+                width: 100%;    
+        } 
+        footer {
+            flex-direction: column; /* Empilha os itens verticalmente */
+            text-align: center; /* Alinha o texto centralmente */
+        }
+
+        footer h4,
+        footer h5,
+        footer p {
+            margin-bottom: 10px; /* Espaçamento entre os itens empilhados */
+        }
+        .initial {
+            width: 75%;
+        }
+        .initial1 {
+            width: 100%;
+        }
+       
+        .swiper-wrapper{
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        }
+        .swiper-slide img {
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+        
+        }
+        }
+
+
+    /* FONTES */  
+        h1 {
+            text-align: center; /* Centraliza horizontalmente */
+            margin-top: 0; /* Remove margem superior padrão */
+            margin-bottom: 10px; /* Espaçamento inferior */
+            color: #000000; /* Cor do texto */
+            font-size: 23px; /* Tamanho da fonte */
+            align-self: flex-start; /* Alinha o elemento ao início (topo) verticalmente */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bolder; /* Adiciona negrito */
+        }
+        h2 {
+            text-align: center; /* Centraliza horizontalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000000; /* Cor do texto no cabeçalho */
+            font-size: 23px; /* Tamanho da fonte */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: lighter; /* Adiciona negrito */
+
+        }
+        h3 {
+            text-align: center; /* Centraliza horizontalmente */
+            margin-top: 10px; /* Espaço superior para centralização vertical */
+            margin-bottom: 50px; /* Espaço inferior para centralização vertical */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #000000; /* Cor do texto no cabeçalho */
+            font-size: 23px; /* Tamanho da fonte */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+
+        }
+        h4 {
+            text-align: center; /* Centraliza horizontalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff; /* Cor do texto no cabeçalho */
+            font-size: 16px; /* Tamanho da fonte */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+
+        }
+        h5 {
+            text-align: center; /* Centraliza horizontalmente */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff; /* Cor do texto no cabeçalho */
+            font-size: 16px; /* Tamanho da fonte */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+
+        }
+        footer {
+            display: flex;
+            justify-content: space-between; /* Distribui os itens igualmente na linha */
+            align-items: center; /* Alinha os itens verticalmente ao centro */
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            width: 70%;
+        }
+       
+        footer p{
+            font-size: 18px; /* Tamanho da fonte */
+            color: #fff; /* Cor do texto no cabeçalho */
+        }
+        footer p,
+        footer h4,
+        footer h5 {
+            margin: 20; /* Remover margens padrão para evitar espaçamento extra */
+        }
+        footer h5 a {
+            display: flex; /* Usar flexbox para alinhar os itens */
+            align-items: center; /* Alinhar os itens verticalmente ao centro */
+            color: #fff; /* Cor do texto do link */
+            text-decoration: none; /* Remover sublinhado padrão */
+            transition: color 0.3s ease; /* Transição suave da cor ao passar o mouse */
+        }
+
+        footer h5 a img {
+            width: 60px; /* Ajustar a largura do ícone do WhatsApp */
+            margin-right: 0; /* Espaçamento à direita do ícone */
+        }
+
+        footer h5 a:hover {
+            color: #48ff00; /* Cor do texto do link ao passar o mouse */
+        }
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+    /* ESTILOS FORMULÁRIO */
+    /* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+    .formulariop4 {
+        margin-top: 0; /* Remove a margem superior */
+        margin-left: auto; /* Alinha à direita do container esquerdo */
+        margin-right: auto; /* Centraliza horizontalmente */
+        display: flex; /* Torna o contêiner um flex container */
+        flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+        justify-content: center; /* Centraliza os itens horizontalmente */
+        align-items: center; /* Centraliza os itens verticalmente */
+
+    }   
+    .form {
+            margin-top: 0; /* Remove a margem superior */
+            margin-bottom: 0; /* Margem inferior de 20px */
+            margin-left: auto; /* Alinha à direita do container esquerdo */
+            margin-right: auto; /* Centraliza horizontalmente */
+            flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            align-items: center; /* Centraliza os itens verticalmente */
+            padding: 20px; /* Espaçamento interno */
+            align-items: center; /* Centraliza os itens verticalmente */
+
+        }   
+    
+    .form__input-wrapper--labelled{
+    width: 100%;
+    max-width: 100%; /* Definir uma largura máxima para o campo */
+    height: 40px;
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    border-radius: 20px;
+    align-items: center; /* Centraliza os itens verticalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+
+
+    }
+    .form__field,
+    .form__field--select {
+    width: 100%;
+    max-width: 100%; /* Definir uma largura máxima para o campo */
+    height: 40px;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #e2dddd;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Adiciona espaçamento inferior entre os campos */
+    box-sizing: border-box;
+    text-align: center; /* Centraliza horizontalmente */
+
+    }
+    /* Estilos quando o mouse está sobre os campos de entrada e seleção */
+    .form__input-wrapper--labelled:hover,
+    .form__field:hover,
+    .form__field--select:hover {
+    background-color: #5c5959;
+    
+    }
+    /* Estilos quando os campos de entrada e seleção estão focados */
+    .form__input-wrapper--labelled:focus,
+    .form__field:focus,
+    .form__field--select:focus {
+    outline: none;
+    background-color: #f7b3b3;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    
+    }
+    /* Estilo para as opções do campo de seleção */
+    .form__field--select option {
+    font-size: 16px;
+    color: #333;
+    
+    }
+    /* Estilo para as opções do campo de seleção quando o mouse está sobre elas */
+    .form__field--select option:hover {
+    color: #44c457;
+    font-size: 14px;
+    }
+
+      </style>  
+</head>
+<body>
+    <header>
+        <div class="hea"> 
+            <h2 id="main-title"></h2>
+        </div>
+        <div class="apresentacao">
+            <div class="explicacao"> 
+                <h2>Agora escolha a cor da sua loja, selecione a paleta de cor desejada e clique em confirmar.</h2>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="cont-principal">                      
+            <div class="initial1">                     
+                <div class="initial">       
+                    <!-- Carrossel de Nichos (Horizontal) -->
+                    <div class="swiper-container-horizontal">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://github.com/ronildob/IMAGENS/blob/main/Orange.png?raw=true" alt="Laranja">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://github.com/ronildob/IMAGENS/blob/main/Green.png?raw=trueg" alt="Verde">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://github.com/ronildob/IMAGENS/blob/main/Purple.png?raw=true" alt="Roxo">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://github.com/ronildob/IMAGENS/blob/main/Black.png?raw=true" alt="Preto">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://github.com/ronildob/IMAGENS/blob/main/Blue.png?raw=true" alt="Azul">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://github.com/ronildob/IMAGENS/blob/main/Red.png?raw=true" alt="Vermelho">
+                            </div>
+                        </div>
+                    </div>
+                                                   
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>      
+                </div>    
+            </div>
+            <!-- Container do formulário -->
+                <div class="formulariop4">           
+                    <form method="POST" action="{% url 'tema' %}" id="formTema" class="form custom-input__form">
+                        {% csrf_token %}
+                        <div class="form__input-row">
+                            <div class="form__input-wrapper form__input-wrapper--labelled">
+                                <select id="cor" name="cor" class="form__field form__field--select form__field--large" required>
+                                    <option value="">Selecione a Cor</option>
+                                    <option value="Paleta de Cor 1">LARANJA</option>
+                                    <option value="Paleta de Cor 2">VERDE</option>
+                                    <option value="Paleta de Cor 3">ROXO</option>
+                                    <option value="Paleta de Cor 4">PRETO</option>
+                                    <option value="Paleta de Cor 5">AZUL</option>
+                                    <option value="Paleta de Cor 6">VERMELHO</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="cont-botão">    
+                            <!-- Botão Enviar -->                      
+                             <button type="submit" class="form__submit button button--primary button--verificar" onclick="tema()">SALVAR</button>
+                        </div>  
+                    </form>
+                </div>                                      
+        </div>
+        <div id="spinner-overlay" class="spinner-overlay">   
+            <svg class="sp" viewBox="0 0 128 128" width="128px" height="128px" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="grad1" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#000" />
+                        <stop offset="40%" stop-color="#fff" />
+                        <stop offset="100%" stop-color="#fff" />
+                    </linearGradient>
+                    <linearGradient id="grad2" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="#000" />
+                        <stop offset="60%" stop-color="#000" />
+                        <stop offset="100%" stop-color="#fff" />
+                    </linearGradient>
+                    <mask id="mask1">
+                        <rect x="0" y="0" width="128" height="128" fill="url(#grad1)" />
+                    </mask>
+                    <mask id="mask2">
+                        <rect x="0" y="0" width="128" height="128" fill="url(#grad2)" />
+                    </mask>
+                </defs>
+                <g fill="none" stroke-linecap="round" stroke-width="16">
+                    <circle class="sp__ring" r="56" cx="64" cy="64" stroke="#ddd" />
+                    <g stroke="hsl(223,90%,50%)">
+                        <path class="sp__worm1" d="M120,64c0,30.928-25.072,56-56,56S8,94.928,8,64" stroke="hsl(343,90%,50%)" stroke-dasharray="43.98 307.87" />
+                        <g transform="translate(42,42)">
+                            <g class="sp__worm2" transform="translate(-42,0)">
+                                <path class="sp__worm2-1" d="M8,22c0-7.732,6.268-14,14-14s14,6.268,14,14" stroke-dasharray="43.98 175.92" />
+                            </g>
+                        </g>
+                    </g>
+                    <g stroke="hsl(283,90%,50%)" mask="url(#mask1)">
+                        <path class="sp__worm1" d="M120,64c0,30.928-25.072,56-56,56S8,94.928,8,64" stroke-dasharray="43.98 307.87" />
+                        <g transform="translate(42,42)">
+                            <g class="sp__worm2" transform="translate(-42,0)">
+                                <path class="sp__worm2-1" d="M8,22c0-7.732,6.268-14,14-14s14,6.268,14,14" stroke-dasharray="43.98 175.92" />
+                            </g>
+                        </g>
+                    </g>
+                    <g stroke="hsl(343,90%,50%)" mask="url(#mask2)">
+                        <path class="sp__worm1" d="M120,64c0,30.928-25.072,56-56,56S8,94.928,8,64" stroke-dasharray="43.98 307.87" />
+                        <g transform="translate(42,42)">
+                            <g class="sp__worm2" transform="translate(-42,0)">
+                                <path class="sp__worm2-1" d="M8,22c0-7.732,6.268-14,14-14s14,6.268,14,14" stroke-dasharray="43.98 175.92" />
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+      </div>   
+    </main>
+   
+    <footer>
+        
+        <p>&copy; 2024 GL Soluções Digitais</p>
+        <h5>
+            <a href="https://api.whatsapp.com/send?phone=5513998053097" target="_blank">
+                <img src="{% static 'home/img/whats.png' %}"> (13) 99805-3097
+            </a>
+        </h5>
+        
+        <h4 id="rodape"></h4>
+     
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- carrossel -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Inicializar carrossel horizontal
+        var horizontalSwiper = new Swiper('.swiper-container-horizontal', {
+            direction: 'horizontal',
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            keyboard: {
+                enabled: true,
+            },
+            mousewheel: {
+                enabled: true,
+            },
+            effect: 'slide',
+            coverflowEffect:
+                {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+        });
+        var swiperContainer = document.querySelector('.swiper-container-horizontal');
+
+            // Pausa o autoplay quando o mouse estiver sobre o carrossel
+            swiperContainer.addEventListener('mouseover', function() {
+                horizontalSwiper.autoplay.stop();
+            });
+
+            // Retoma o autoplay quando o mouse é retirado do carrossel
+            swiperContainer.addEventListener('mouseout', function() {
+                horizontalSwiper.autoplay.start();
+            });
+
+            // Inicializar carrossel vertical
+        var verticalSwiper = new Swiper('.swiper-container-vertical', {
+            direction: 'vertical', // Direção vertical: rolar de cima para baixo
+            slidesPerView: 3,
+            spaceBetween: 5,
+            loop: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            keyboard: {
+                enabled: true,
+            },
+            mousewheel: {
+                enabled: true,
+            },
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next', // Botão "Próximo"
+                prevEl: '.swiper-button-prev', // Botão "Anterior"
+            },
+        });
+    
+
+        // Ajuste o posicionamento dos botões de navegação ao inicializar
+        verticalSwiper.on('init', function() {
+            var nextButton = document.querySelector('.swiper-button-next');
+            var prevButton = document.querySelector('.swiper-button-prev');
+
+            // Posicionar o botão "Próximo" abaixo dos slides
+            nextButton.style.bottom = '20px'; // Ajustar distância do fundo
+
+            // Posicionar o botão "Anterior" acima dos slides
+            prevButton.style.top = '20px'; // Ajustar distância do topo
+        });
+    });
+    
+    function expandirImagem() {
+        var imagem = document.getElementById('imagemExpansivel');
+        // Obtém as dimensões atuais da imagem
+                var alturaAtual = imagem.clientHeight;
+
+        // Define a nova largura e altura (dobrando as dimensões atuais)        
+        var novaAltura = alturaAtual * 2;
+
+        // Aplica as novas dimensões à imagem        
+        imagem.style.height = novaAltura + 'px';
+    }
+
+</script>
+ <!-- SPINER -->
+ <script>
+    function mostrarSpinner() {
+        document.getElementById('spinner-overlay').style.display = 'flex';
+    }
+    
+    function ocultarSpinner() {
+        document.getElementById('spinner-overlay').style.display = 'none';
+    }
+</script>
+ 
+<script>
+    function tema() {
+        // Coletar o valor da cor selecionada
+        var corSelecionada = document.getElementsByName('cor')[0].value;
+
+        // Verificar se a cor foi selecionada
+        if (!corSelecionada) {
+            console.error('Por favor, selecione uma cor antes de continuar.');
+            return; // Interrompe o processo se a cor não foi selecionada
+        }
+
+        // Mostrar o spinner antes de enviar os dados
+        mostrarSpinner();
+
+        // Construir o objeto de dados para enviar ao backend
+        var dados = {
+            cor: corSelecionada,
+        };
+
+        // Enviar os dados para o backend usando fetch
+        fetch("{% url 'tema' %}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify(dados)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Tema executado com sucesso.');
+                // Ocultar o spinner após o envio bem-sucedido
+                ocultarSpinner();
+                // Exibir mensagem de confirmação para o usuário
+                document.getElementById("confirmationMessage").style.display = "block";
+                // Redirecionar para a página 2 após finalizar o processamento
+            } else {
+                console.error('Erro ao executar tema.');
+                // Redirecionar para a página de erro em caso de falha
+            }
+        })
+        .catch(error => {
+            console.error('Erro ao executar tema:', error);
+            // Redirecionar para a página de erro em caso de erro
+        });
+    }
+</script>
+
+    
+</body>
+</html>

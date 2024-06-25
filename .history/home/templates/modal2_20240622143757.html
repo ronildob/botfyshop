@@ -1,0 +1,165 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://github.com/ronildob/IMAGENS/blob/main/fiveicon%20-%20GL%20.png?raw=true">
+    <link rel="stylesheet" href="{% static 'home/css/home.css'%}">
+    <title>IA.GL Soluções Digitais</title>
+    
+    <style>
+        /* Estilo para o modal */
+        .modalDialog {
+        display: none; /* Oculta por padrão */
+        position: fixed; /* Posicionamento fixo */
+        z-index: 1000; /* Z-index alto para sobrepor outros elementos */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto; /* Adiciona rolagem se necessário */
+        background-color: rgba(0,0,0,0.4); /* Cor de fundo semi-transparente */
+        }
+
+        /* Estilo para o conteúdo do modal */
+        .modal-content {
+        background-color: #fefefe; /* Cor de fundo do conteúdo do modal */
+        margin: 15% auto; /* Margem para centralizar verticalmente */
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 10px;
+        width: 80%; /* Largura do conteúdo do modal */
+        max-width: 600px; /* Largura máxima do conteúdo do modal */
+        text-align: center; /* Centraliza o texto */
+        
+        }
+
+        /* Estilo para o botão de fechar */
+        .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        }
+
+
+
+
+
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #44c457, #8730bc);
+        }
+        dialog::backdrop {
+            background: linear-gradient(to right, #44c457, #8730bc);
+        }
+        dialog {
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: black; /* Cor de fundo do conteúdo do modal */
+            margin: 15% auto; /* Margem para centralizar verticalmente */
+            border-radius: 10px;
+            width: 80%; /* Largura do conteúdo do modal */
+            max-width: 100%; /* Largura máxima do conteúdo do modal */
+            text-align: center; /* Centraliza o texto */
+            color: #fff; /* Cor do texto no cabeçalho */
+            font-size: 20px; /* Tamanho da fonte */
+        
+        }
+        #main-title {
+            text-align: center;
+            animation: pulsate 2s infinite; /* Aplica o efeito de pulsar somente ao título */
+        }
+        button {
+            margin-top: 20px;
+        }
+        @keyframes pulsate {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        h5 {
+            text-align: center; /* Centraliza horizontalmente */
+            margin-top: 10px; /* Espaço superior para centralização vertical */
+            margin-bottom: 50px; /* Espaço inferior para centralização vertical */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #f50a0a; /* Cor do texto no cabeçalho */
+            font-size: 40px; /* Tamanho da fonte */
+        }
+    </style>
+</head>
+<body>
+    <dialog id="modalDialog">        
+        <form method="post" action="{% url 'redirecionar_para_validacao' %}">
+            {% csrf_token %}
+            <h5 id="main-title">Oops! Plan not found!</h5>
+            <p>Please come back and check if you have activated a plan with Shopify.</p>
+            <p>Clique em OK para retornar à página anterior.</p>
+            <button type="submit" class="form__submit button button--primary">OK</button>
+          
+        </form>
+        
+    </dialog>
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const modalDialog = document.getElementById('modalDialog');
+            const okButton = document.getElementById('okButton');
+
+            // Verifica se os elementos foram encontrados corretamente
+            console.log("Modal Dialog:", modalDialog);
+            console.log("OK Button:", okButton);
+
+            // Adiciona um event listener para fechar o modal ao clicar no botão "OK"
+            okButton.addEventListener('click', function() {
+                modalDialog.close();
+            });
+
+            // Função para animar somente o título do modal
+            function animateText() {
+                const mainTitle = document.getElementById('main-title');
+                const pulsateClass = 'pulsate';
+        
+                function togglePulsate() {
+                    mainTitle.classList.toggle(pulsateClass);
+                }
+        
+                const interval = 2000; // Intervalo para alternância da classe (2 segundos)
+                setInterval(togglePulsate, interval);
+            }
+        
+            // Chama a função de animação quando o documento estiver totalmente carregado
+            animateText(); // Chama a função diretamente após o carregamento do DOM
+        });
+    </script>
+</body>
