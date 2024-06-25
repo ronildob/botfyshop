@@ -1,0 +1,29 @@
+Explicação das Configurações:
+
+slidesPerView: Define quantos slides são visíveis por vez.
+
+spaceBetween: Espaço entre os slides.
+
+loop: Habilita o loop infinito do carrossel.
+
+pagination: Configuração para a paginação (marcadores).
+
+autoplay: Configuração da reprodução automática.
+
+speed: Velocidade de transição entre os slides.
+
+effect: Tipo de efeito de transição entre os slides.
+
+coverflowEffect: Configurações específicas para o efeito de cobertura.
+
+keyboard: Habilita a navegação pelo teclado.
+
+mousewheel: Habilita a navegação com a roda do mouse.
+
+Observações:
+S
+ubstitua "url1", "url2", "url3" pelos links que você deseja redirecionar ao clicar nas imagens.
+
+As configurações de largura e altura da imagem podem ser ajustadas via CSS para garantir que sejam exibidas corretamente.
+
+Os estilos das setas (swiper-button-prev e swiper-button-next) podem ser personalizados usando propriedades CSS inline ou em seu arquivo CSS externo.
