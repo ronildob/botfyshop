@@ -10,21 +10,19 @@ from products.views import (ProductListView,
                             ProductFeaturedListView,
                             ProductFeaturedDetailView)
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home_page),
-    path('about/', about_page),
+	path('', home_page),
+	path('about/', about_page),
 	path('contact/', contact_page),
-    path('login/', login_page),
-    path('register/', register_page),
-    path('products/', ProductListView.as_view()),
-    path('products-fbv/', product_list_view), 
-    path('products/<int:pk>', ProductDetailView.as_view()),
-    path('products-fbv/<int:pk>', product_detail_view), 
-    path('featured/', ProductFeaturedListView.as_view()),
-    path('featured/<int:pk>/', ProductFeaturedDetailView.as_view()),
-    
-    
-]
+        path('login/', login_page),
+        path('register/', register_page),
+        path('featured/', ProductFeaturedListView.as_view()),
+        path('featured/<int:pk>/', ProductFeaturedDetailView.as_view()),
+        path('products/', ProductListView.as_view()),
+        path('products-fbv/', product_list_view), 
+        path('products/', ProductDetailView.as_view()),
+        path('products-fbv/', product_detail_view), 
+	    path('admin/', admin.site.urls),
+        ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
