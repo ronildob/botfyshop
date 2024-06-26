@@ -1,0 +1,610 @@
+/* Estilos globais */
+        
+/* Estilos gerais do corpo da página */
+body {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Define a orientação dos elementos como coluna */
+    justify-content: flex-start; /* Alinha os elementos no início (no topo) verticalmente */
+    align-items: center; /* Alinha os elementos no centro horizontalmente */
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+    background: #ece9ee; 
+  }
+  
+  /* Estilos do cabeçalho */
+  header {
+    background: #ece9ee;     color: #c3bebe; /* Cor do texto no cabeçalho */
+    padding: 10px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+  }
+  
+ 
+  /* Estilos dos itens do menu */
+  .menu {
+    color: #c3bebe; /* Cor do texto */
+    padding: 20px 40px; /* Espaçamento interno (vertical horizontal) */
+    text-align: center; /* Alinhamento do texto */
+    width: 100%; /* Largura total */
+    max-width: 120px; /* Largura máxima para evitar ocupar muito espaço */
+    height: 40px; /* Altura fixa */
+    margin: 10px; /* Margem externa para espaçamento entre os itens */
+    border-radius: 10px; /* Borda arredondada */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    background-image: url('https://github.com/ronildob/IMAGENS/blob/main/Gl%20LOGO%20(300%20x%2090%20px).png?raw=true'); /* URL da imagem de fundo */
+    background-size: cover; /* Redimensiona a imagem para cobrir todo o contêiner */
+    background-position: center; /* Centraliza a imagem no contêiner */
+  }
+  /* Estilos do conteúdo principal */
+  main {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    padding: 20px; /* Espaçamento interno */
+    display: flex; /* Display flex para layout flexível */
+    flex-wrap: wrap; /* Permite que os itens sejam envolvidos em várias linhas */
+    justify-content: space-between; /* Distribui uniformemente os itens ao longo do eixo principal */
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+  }
+   
+/* Estilos do contêiner principal */
+.cont-principal {
+width: 100%; /* Largura total */
+max-width: 100%; /* Largura máxima igual à largura da tela */
+height: auto; /* Altura automática para se ajustar ao conteúdo */
+margin-bottom: 1px; /* Margem inferior para separação */
+background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+padding: 20px; /* Espaçamento interno */
+box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+display: flex; /* Torna o contêiner um flex container */
+justify-content: center; /* Alinha os itens horizontalmente ao centro */
+align-items: center; /* Alinha os itens verticalmente ao centro */
+flex-direction: column; /* Empilha os itens verticalmente */
+
+}
+.apresentacao {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 1px; /* Margem inferior para separação */
+    position: relative; /* Define o posicionamento relativo */    
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-wrap: wrap; /* Permite que os itens flexíveis sejam quebrados em múltiplas linhas conforme necessário */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    
+}
+ 
+.explicacao {
+    width: 80%; /* Define a largura como metade do contêiner principal */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */  
+    margin-bottom: 1px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+    
+}
+.cont-princ {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 1px; /* Margem inferior para separação */
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+    align-items: flex-start; /* Alinha os itens verticalmente ao topo */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    
+
+}
+
+.contenedor-interno {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 20px; /* Margem inferior para separação */
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    margin-bottom: 1px; /* Espaço abaixo do contêiner */
+    
+}
+
+.formulario {
+    width: 80%; /* Define a largura como metade do contêiner principal */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */  
+    margin-bottom: 10px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+    align-items: center; /* Centraliza os itens verticalmente */
+} 
+
+.formulariop4 {
+    width: 80%; /* Define a largura como metade do contêiner principal */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */  
+    margin-bottom: 10px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+    align-items: center; /* Centraliza os itens verticalmente */
+    
+}
+.cont-formu {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 20px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background: linear-gradient(to right, #44c457, #8730bc); /* Gradiente de fundo */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+    align-items: center; /* Centraliza os itens ao longo do eixo secundário (horizontal) */
+}
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+       /*        VIDEO     */
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+
+.videoexplicacao {
+    width: 80%; /* Define a largura como metade do contêiner principal */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */  
+    margin-bottom: 10px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    box-flex: 1; /* Permite que o item flexível cresça e encolha conforme necessário */
+    align-items: center; /* Centraliza os itens verticalmente */
+    
+}
+@media (max-width: 768px) {
+.explicacao, .videoexplicacao, .formulario{
+    width: 100%; /* Define a largura como 100% em dispositivos menores */
+    }
+.formulariop4{
+    width: 50%; /* Define a largura como 100% em dispositivos menores */
+    }
+}
+.cont-princ {
+    width: 100%; /* Largura total */
+}
+    /* video */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção de 16:9 para vídeos responsivos */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+    }
+.video-container iframe,
+.video-container object,
+.video-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+ /* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+            /*      BOTÂO      */
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+
+.cont-botão {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 20px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+}
+.cont-botãopg6 {
+    width: 40%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 20px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+}
+
+/* Estilos para o botão de envio */
+.button--verificar {
+    width: 100%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+    padding: 10px; /* Espaçamento interno */
+    height: 100%; /* Altura fixa para botões */
+    font-size: 19px; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    background: #44c457;
+    display: block; /* Torna o botão um bloco para ocupar toda a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+    align-items: center; /* Centraliza os itens ao longo do eixo secundário (horizontal) */
+    border-radius: 10px; /* Borda arredondada de 20px */
+    border-width: 2px; /* largura da borda */
+    border-style: solid; /* estilo da borda (pode ser solid, dashed, dotted, double, etc.) */
+    border-color: #44c457; /* cor da borda */
+}
+button, input[type=submit] {
+    width: 40%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+    padding: 10px; /* Espaçamento interno */
+    height: 100%; /* Altura fixa para botões */
+    font-size: 19px; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    background:#44c457;
+    display: block; /* Torna o botão um bloco para ocupar toda a largura disponível */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+    align-items: center; /* Centraliza os itens ao longo do eixo secundário (horizontal) */
+    border-radius: 10px; /* Borda arredondada de 20px */
+    border-width: 2px; /* largura da borda */
+    border-style: solid; /* estilo da borda (pode ser solid, dashed, dotted, double, etc.) */
+    border-color: #44c457; /* cor da borda */
+    }
+
+.redirecionamento {
+    width: 38%; /* Largura relativa ao contêiner pai (80% do contêiner pai) */
+    padding: 10px; /* Espaçamento interno */
+    height: 100%; /* Altura fixa para botões */
+    border-radius: 10px; /* Borda arredondada */
+    margin-bottom: 10px; /* Margem inferior de 20px */
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    background: #7b1fad;
+    display: flex; /* Torna o elemento um flex container */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+    text-align: center; /* Centraliza o texto dentro do elemento */
+    border-radius: 10px; /* Borda arredondada de 20px */
+    border-width: 3px; /* largura da borda */
+    border-style: solid; /* estilo da borda (pode ser solid, dashed, dotted, double, etc.) */
+    border-color: #7b1fad; /* cor da borda */
+}
+
+/* Define a animação de piscar */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+    }
+    
+/* Aplica a animação ao texto dentro do botão */
+a.botao-externo {
+animation: blink 1s infinite; /* Animar o texto com a animação 'blink' infinitamente */
+}
+   
+.botao-externo {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    }
+
+/* Estilos para telas menores que 600px (móveis) */
+@media (max-width: 600px) {
+button, input, .redirecionamento{
+    width: 100%; /* Reduz a largura para 80% do contêiner pai */
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    height: 100%; /* Altura fixa para botões */
+    margin-bottom: 10px; /* Reduz a margem inferior */
+}
+.cont-botãopg6 {
+    width: 100%; /* Largura total */
+    max-width: 100%; /* Largura máxima igual à largura da tela */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    margin-bottom: 20px; /* Margem inferior de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 10px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+    display: flex; /* Torna o contêiner um flex container */
+    flex-direction: column; /* Empilha os itens verticalmente */
+    justify-content: center; /* Centraliza os itens ao longo do eixo principal (vertical) */
+}
+.cont-princ {
+    width: 100%; /* Largura total */
+}
+}
+
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+                    /* ESTILOS TEXTO */
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+h1 {
+    text-align: center; /* Centraliza horizontalmente */
+    margin-top: 0; /* Remove margem superior padrão */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    color: #fff; /* Cor do texto */
+    font-size: 50px; /* Tamanho da fonte */
+    align-self: flex-start; /* Alinha o elemento ao início (topo) verticalmente */
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  /* Estilizando o título h2 */
+  h2 {
+    text-align: center; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espaço superior para centralização vertical */
+    margin-bottom: 50px; /* Espaço inferior para centralização vertical */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do texto no cabeçalho */
+    font-size: 30px; /* Tamanho da fonte */
+    font-family: 'Montserrat', sans-serif;
+  
+  }
+  /* Estilizando o título h3 */
+  h3 {
+    text-align: center; /* Centraliza horizontalmente */
+    margin-top: 10px; /* Espaço superior para centralização vertical */
+    margin-bottom: 50px; /* Espaço inferior para centralização vertical */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Cor do texto no cabeçalho */
+    font-size: 30px; /* Tamanho da fonte */
+    font-family: 'Montserrat', sans-serif;
+  }
+  /* Estilos para os campos de entrada e seleção */
+.form__field,
+.form__field--select {
+  width: 100%;
+  max-width: 100%; /* Definir uma largura máxima para o campo */
+  height: 40px;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px; /* Adiciona espaçamento inferior entre os campos */
+  box-sizing: border-box;
+  
+}
+/* Estilos quando o mouse está sobre os campos de entrada e seleção */
+.form__field:hover,
+.form__field--select:hover {
+  background-color: #5c5959;
+}
+/* Estilos quando os campos de entrada e seleção estão focados */
+.form__field:focus,
+.form__field--select:focus {
+  outline: none;
+  background-color: #f7b3b3;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+/* Estilo para as opções do campo de seleção */
+.form__field--select option {
+  font-size: 14px;
+  color: #333;
+}
+/* Estilo para as opções do campo de seleção quando o mouse está sobre elas */
+.form__field--select option:hover {
+  color: #44c457;
+  font-size: 14px;
+}
+/* Media query para estilos responsivos */
+@media (min-width: 768px) {
+.formulario {
+    flex-direction: row; /* Organiza os elementos em linha para telas maiores */
+    justify-content: space-around; /* Distribui os elementos igualmente na linha */
+    align-items: flex-start; /* Alinha os elementos no topo */
+    height: auto; /* Volta à altura automática */
+  }
+.formulariop4 {
+width: 50%; /* Define a largura como 100% em dispositivos menores */
+flex-direction: row; /* Organiza os elementos em linha para telas maiores */
+justify-content: space-around; /* Distribui os elementos igualmente na linha */
+align-items: flex-start; /* Alinha os elementos no topo */
+height: auto; /* Volta à altura automática */
+}
+.cont-princ {
+    width: 100%; /* Largura total */
+}
+.form__field,
+.form__field--select {
+    width: 100%; /* Retorna à largura total */
+    max-width: 500px; /* Define uma largura máxima */
+    margin-bottom: 20px; /* Adiciona espaçamento inferior entre os campos */
+  }
+}
+
+
+
+
+
+
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+/* Estilos para o carrossel Nicho (swiper-container-horizontal) */
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+.cont-carrossel-cor {
+    width: 100%; /* Ocupa toda a largura disponível */
+    padding: 10px;
+    height: 43%;/* Altura de 100% em relação ao contêiner pai */
+    box-sizing: border-box;
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+}
+  /* Estilos para o carrossel de cores (swiper-container-vertical) */
+.swiper-container-vertical {
+    width: 100%; /* Largura de 100% em relação ao contêiner pai */
+    height: 100%; /* Altura de 100% em relação ao contêiner pai */
+    border-radius: 20px; /* Borda arredondada de 20px */
+    position: relative; /* Define o posicionamento relativo */
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do contêiner */
+    background-color: rgba(44, 44, 44, 0.0); /* Cor de fundo transparente */
+    padding: 1px; /* Espaçamento interno */
+    box-sizing: border-box; /* Mantém o padding dentro do tamanho total do contêiner */
+   
+  }
+.initial {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #44c457, #8730bc);
+}
+.swiper-container-horizontal {
+width: 100%;
+height: 100%;/* Altura de 100% em relação ao contêiner pai */
+border-radius: 20px;
+}
+
+/* Estilos para os slides dentro do carrossel */
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-wrapper{
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Redimensiona a imagem mantendo a proporção */  
+}
+
+/* Media query para dispositivos móveis */
+@media screen and (min-width: 768px) {
+    .container-esquerdo {
+        width: 50%; /* Ambos ocupam metade da largura */
+        margin-top: 0; /* Remove a margem superior */
+        
+    }
+   
+      .container-esqup4 {
+          width: 100; /* Ambos ocupam metade da largura */
+          margin-top: 0; /* Remove a margem superior */
+          
+      }
+    .cont-video{
+        width: calc(100%); /* Calcula a largura para ocupar metade do espaço com margem entre os elementos */
+       
+    }
+    .formulariop4 {
+        width: 43%; /* Ambos ocupam metade da largura */
+        margin-top: 0; /* Remove a margem superior */
+        margin-left: auto; /* Alinha à direita do container esquerdo */
+        margin-right: auto; /* Centraliza horizontalmente */
+    }
+    .formulario {
+        width: 100%; /* Ambos ocupam metade da largura */
+        margin-top: 0; /* Remove a margem superior */
+        margin-left: auto; /* Alinha à direita do container esquerdo */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centraliza os elementos verticalmente */
+      }
+      .cont-princ {
+        width: 100%; /* Largura total */
+    }
+  }
+  /* Estilos para telas menores (Mobile) */
+  @media (max-width: 767px) {
+    .container-esqup4 {        
+        width: 100%; /* Ambos ocupam toda a largura disponível */
+    }
+    .container-esquerdo {        
+      width: 100%; /* Ambos ocupam toda a largura disponível */
+  }
+    .formulariop4 {
+      width: 100%; /* Ambos ocupam toda a largura disponível */
+  }
+    .formulario {
+        width: 100%; /* Ambos ocupam toda a largura disponível */
+        margin-bottom: 5px; /* Adiciona margem inferior entre os containers */
+    }
+    .cont-carrossel-cor
+    {    
+        width: 100%; /* Calcula a largura para ocupar metade do espaço com margem entre os elementos */
+        height: 10% /* Altura de 100% em relação ao contêiner pai */
+    }
+    .swiper-container-vertical{    
+        width: 100%; /* Calcula a largura para ocupar metade do espaço com margem entre os elementos */
+        height: 100% /* Altura de 100% em relação ao contêiner pai */
+    }
+    /* Estilos para os slides dentro do carrossel */
+    .swiper-slide img {
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+    }
+    .swiper-wrapper{
+        width: 100%; /* Largura total */
+        height: 100%; /* Altura total */
+        object-fit: cover; /* Redimensiona a imagem mantendo a proporção */  
+    }
+    .cont-princ {
+        width: 100%; /* Largura total */
+    }
+    }
+
+@media (max-width: 390px){
+    .cont-carrossel-cor{    
+        width: 100%; /* Calcula a largura para ocupar metade do espaço com margem entre os elementos */
+        height: 35%; /* Altura de 100% em relação ao contêiner pai */
+    }
+    .swiper-container-vertical{    
+    width: 100%; /* Calcula a largura para ocupar metade do espaço com margem entre os elementos */
+    height: 100%;
+}
+    .swiper-wrapper{
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+}
+    .swiper-slide img {
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Redimensiona a imagem mantendo a proporção */
+    
+  }
+  .cont-princ {
+    width: 100%; /* Largura total */
+}
+}
+
+
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+           /*         RODAPÈ            */
+/* #$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$#$ */
+
+
