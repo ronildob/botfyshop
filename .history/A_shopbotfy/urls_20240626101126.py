@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from .views import home_page, about_page, contact_page, login_page, register_page
-from products.views import ProductListView, product_list_view, ProductDetailView, product_detail_view
+from products.views import ProductListView, product_list_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
