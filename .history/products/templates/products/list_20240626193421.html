@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class='container'>
+        <div class='row'>
+            {% for obj in object_list %}
+                <div class='col'>
+                    {{ forloop.counter }}
+                    {% include 'products/snippets/card.html' with instance=obj %}
+                    {% cycle '<h1>Um texto qualquer</h1>' '<h1>Outro texto</h1>' %}
+                </div>
+            {% endfor%}
+        </div>
+    </div>
+{% endblock content %}
